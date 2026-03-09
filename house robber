@@ -1,0 +1,15 @@
+class Solution {
+    public int rob(int[] nums) {
+        if(nums== null || nums.length == 0) return 0;
+        if(nums.length == 1) return nums[0];
+        if(nums.length == 2) return Math.max(nums[0],nums[1]);
+        int num1=0;
+        int num2=0;
+        for(int num:nums){
+            int newamount = Math.max(num1,num2+num);
+            num2 = num1;
+            num1 = newamount;
+        }
+        return num1;
+    }
+}
