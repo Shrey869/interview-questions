@@ -1,0 +1,16 @@
+class Solution {
+    public int jump(int[] nums) {
+        int n = nums.length -1;
+        int jumps = 0, curr = 0 , maxreach = 0;
+        for(int i = 0; i<n ; i++){
+            maxreach = Math.max(maxreach , i+nums[i]);
+
+            if(i == curr){
+                jumps++;
+                curr= maxreach;
+            }
+        }
+    
+    return jumps;
+    }
+}
